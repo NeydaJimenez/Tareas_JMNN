@@ -18,4 +18,6 @@ class TareaModel:
             cursor = conn.cursor()
             query = """INSERT INTO tareas (id_usuario, titulo, descripcion, prioridad, clasificacion)
             VALUES (%s, %s, %s, %s, %s)"""
-            
+            cursor.execute(query, (id_usuario, titulo, descripcion, prioridad, clasificacion))
+            conn.commit()
+            conn.close()
